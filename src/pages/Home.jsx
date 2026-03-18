@@ -31,7 +31,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-7xl font-light text-white mb-4 md:mb-6 uppercase tracking-[0.1em] leading-tight"
           >
-            Capturing <br className="md:hidden" /><span className="text-gold font-normal">Timeless</span> Moments
+            Captured by <br className="md:hidden" /><span className="text-gold font-normal">Kunal </span> Ravrani
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-lg md:text-xl text-textSecondary mb-12 font-light tracking-wide"
           >
-            Elevating your visual storytelling with premium fine-art photography.
+           Documenting life through evolving lenses — from film beginnings to digital mastery.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

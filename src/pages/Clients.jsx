@@ -62,7 +62,7 @@ export default function Clients() {
         <h2 className="text-2xl md:text-3xl font-light text-white uppercase tracking-widest mb-12 md:mb-16 text-center">Words of Praise</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <TestimonialCard 
-             text="A visionary talent. The resulting images were nothing short of cinematic masterpieces. Unparalleled eye for detail." 
+             text="The most beautiful photography experience we could have asked for. Every moment and emotion was captured so naturally and perfectly." 
              author="Elena Rostova" 
              role="Fashion Editor"
           />

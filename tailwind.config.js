@@ -7,11 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0f0f11",
-        surface: "#1a1a1c",
-        gold: "#d4af37",
-        textPrimary: "#f5f5f5",
-        textSecondary: "#a3a3a3"
+        background: "rgb(var(--bg-color) / <alpha-value>)",
+        surface: "rgb(var(--surface-color) / <alpha-value>)",
+        gold: "rgb(var(--gold-color) / <alpha-value>)",
+        textPrimary: "rgb(var(--text-primary) / <alpha-value>)",
+        textSecondary: "rgb(var(--text-secondary) / <alpha-value>)",
+        white: "rgb(var(--white-color) / <alpha-value>)",
+        black: "rgb(var(--black-color) / <alpha-value>)",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

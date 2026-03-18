@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoMain from '../assets/Logo Main.png';
 import logoWhite from '../assets/Logo white.png';
@@ -8,7 +8,28 @@ import logoWhite from '../assets/Logo white.png';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isLight, setIsLight] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light') {
+      setIsLight(true);
+      document.documentElement.classList.add('light');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isLight) {
+      document.documentElement.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+      setIsLight(false);
+    } else {
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+      setIsLight(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,14 +65,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <Link to="/" className="z-50 flex items-center">
           <img
-            src={scrolled || isOpen ? logoWhite : logoWhite}
+            src={logoWhite}
             alt="LensCraft Logo"
-            className="h-12 md:h-14 w-auto object-contain transition-all duration-300"
+            className="logo-white h-12 md:h-14 w-auto object-contain transition-all duration-300"
+          />
+          <img
+            src={logoMain}
+            alt="LensCraft Logo"
+            className="logo-main h-12 md:h-14 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10">
+        <div className="hidden md:flex space-x-10 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -61,16 +87,25 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          <button onClick={toggleTheme} className="text-textSecondary hover:text-gold transition-colors focus:outline-none" aria-label="Toggle Theme">
+            {isLight ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white hover:text-gold transition-colors z-50 p-2"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-2 z-50 bg-surface/80 backdrop-blur-lg border border-white/10 rounded-full px-2 py-1 shadow-lg">
+          <button onClick={toggleTheme} className="text-white hover:text-gold transition-colors p-2 focus:outline-none" aria-label="Toggle theme">
+            {isLight ? <Moon size={22} /> : <Sun size={22} />}
+          </button>
+          <div className="w-[1px] h-6 bg-white/20"></div>
+          <button
+            className="text-white hover:text-gold transition-colors p-2 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -81,7 +116,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ type: 'tween', duration: 0.4 }}
-            className="fixed inset-0 w-full h-[100dvh] bg-background/98 backdrop-blur-2xl flex flex-col justify-center items-center space-y-10 md:hidden z-40"
+            className="fixed inset-0 w-full h-[100dvh] bg-background/90  backdrop-blur-2xl flex flex-col justify-center items-center space-y-10 md:hidden z-40"
           >
             {navLinks.map((link, i) => (
               <motion.div

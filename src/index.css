@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-color: 15 15 17;
+    --surface-color: 26 26 28;
+    --gold-color: 212 175 55;
+    --text-primary: 245 245 245;
+    --text-secondary: 163 163 163;
+    --white-color: 255 255 255;
+    --black-color: 0 0 0;
+  }
+
+  html.light {
+    --bg-color: 245 245 245; /* Soft white background */
+    --surface-color: 255 255 255; /* Pure white cards */
+    --gold-color: 184 134 11; /* Darker goldenrod */
+    --text-primary: 20 20 20; /* Dark grey */
+    --text-secondary: 85 85 85; /* Medium grey */
+    --white-color: 15 15 17; /* Inverted white */
+    --black-color: 255 255 255; /* Inverted black */
+  }
+
   body {
     background-color: theme('colors.background');
   }
@@ -10,6 +30,13 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Theme-specific visibility utility */
+  .logo-white { display: block; }
+  .logo-main { display: none; }
+  
+  html.light .logo-white { display: none !important; }
+  html.light .logo-main { display: block !important; }
 }
 
 .masonry-grid {
