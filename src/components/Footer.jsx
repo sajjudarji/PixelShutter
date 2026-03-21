@@ -28,6 +28,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-medium uppercase tracking-widest mb-4 md:mb-6 text-xs md:text-sm">Links</h4>
             <div className="flex flex-col space-y-3 md:space-y-4">
+              <Link to="/" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Home</Link>
               <Link to="/about" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">About Me</Link>
               <Link to="/gallery" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Portfolio</Link>
               <Link to="/clients" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Clients</Link>
@@ -39,7 +40,7 @@ export default function Footer() {
               <a href="https://www.instagram.com/toran_studio/" target='_blank' className="text-textSecondary hover:text-gold transition-colors p-2 md:p-0"><Instagram size={20} /></a>
               <a href="#" className="text-textSecondary hover:text-gold transition-colors p-2 md:p-0"><Twitter size={20} /></a>
               <a href="#" className="text-textSecondary hover:text-gold transition-colors p-2 md:p-0"><Facebook size={20} /></a>
-              <a href="mailto:[toranstudio75@gmail.com]" className="text-textSecondary hover:text-gold transition-colors p-2 md:p-0"><Mail size={20} /></a>
+              <a href="mailto:toranstudio75@gmail.com" className="text-textSecondary hover:text-gold transition-colors p-2 md:p-0"><Mail size={20} /></a>
             </div>
           </div>
         </div>

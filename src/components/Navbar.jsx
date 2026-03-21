@@ -57,7 +57,8 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Clients', path: '/clients' },
+    { name: 'Contact', path: '/contact' },
+    // { name: 'Clients', path: '/clients' },
   ];
 
   return (

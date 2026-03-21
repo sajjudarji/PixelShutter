@@ -4,24 +4,23 @@ import { X } from 'lucide-react';
 import GalleryGrid from '../components/GalleryGrid';
 
 const galleryImages = [
-  { id: 1, category: 'Wedding', src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80', title: 'Timeless Vows' },
-  { id: 2, category: 'Portrait', src: 'https://images.unsplash.com/photo-1514315384763-ba401779410f?auto=format&fit=crop&q=80', title: 'Urban Elegance' },
-  { id: 3, category: 'Travel', src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80', title: 'Mountain Peaks' },
+  { id: 1, category: 'Corporate', src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80', title: 'Timeless Vows' },
+  { id: 2, category: 'Weddings', src: 'https://images.unsplash.com/photo-1514315384763-ba401779410f?auto=format&fit=crop&q=80', title: 'Urban Elegance' },
   { id: 4, category: 'Event', src: 'https://images.unsplash.com/photo-1540039155732-6761b54cbaca?auto=format&fit=crop&q=80', title: 'Gala Night' },
-  { id: 5, category: 'Wedding', src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80', title: 'The First Dance' },
-  { id: 6, category: 'Portrait', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80', title: 'Studio Session' },
-  { id: 7, category: 'Travel', src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80', title: 'Desert Wander' },
-  { id: 8, category: 'Event', src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80', title: 'Concert Lights' }
+  { id: 5, category: 'Celebrities', src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80', title: 'The First Dance' },
+  { id: 6, category: 'Products', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80', title: 'Studio Session' },
+  { id: 7, category: 'Maternity', src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80', title: 'Desert Wander' },
+  { id: 8, category: 'Interiors', src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80', title: 'Concert Lights' }
 ];
 
-const categories = ['All', 'Wedding', 'Portrait', 'Event', 'Travel'];
+const categories = ['All', 'Corporate', 'Weddings', 'Celebrities', 'Products', 'Maternity', 'Event', "Interiors"];
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredImages = filter === 'All' 
-    ? galleryImages 
+  const filteredImages = filter === 'All'
+    ? galleryImages
     : galleryImages.filter(img => img.category === filter);
 
   return (
@@ -29,7 +28,7 @@ export default function Gallery() {
       <div className="text-center mb-12 md:mb-16">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-white uppercase tracking-widest mb-4 md:mb-6">Portfolio</h1>
         <div className="w-12 h-[1px] bg-gold mx-auto mb-8 md:mb-12"></div>
-        
+
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-3 md:gap-8 mb-12 md:mb-16">
           {categories.map((cat) => (
@@ -57,7 +56,7 @@ export default function Gallery() {
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md"
             onClick={() => setSelectedImage(null)}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-gold transition-colors z-[60] bg-black/50 md:bg-transparent rounded-full p-2 md:p-0"
               onClick={() => setSelectedImage(null)}
             >
@@ -73,7 +72,7 @@ export default function Gallery() {
               className="max-w-full max-h-[85vh] object-contain shadow-2xl relative z-40"
               onClick={(e) => e.stopPropagation()}
             />
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}

@@ -14,29 +14,46 @@
   }
 
   html.light {
-    --bg-color: 245 245 245; /* Soft white background */
-    --surface-color: 255 255 255; /* Pure white cards */
-    --gold-color: 184 134 11; /* Darker goldenrod */
-    --text-primary: 20 20 20; /* Dark grey */
-    --text-secondary: 85 85 85; /* Medium grey */
-    --white-color: 15 15 17; /* Inverted white */
-    --black-color: 255 255 255; /* Inverted black */
+    --bg-color: 245 245 245;
+    /* Soft white background */
+    --surface-color: 255 255 255;
+    /* Pure white cards */
+    --gold-color: 184 134 11;
+    /* Darker goldenrod */
+    --text-primary: 20 20 20;
+    /* Dark grey */
+    --text-secondary: 85 85 85;
+    /* Medium grey */
+    --white-color: 15 15 17;
+    /* Inverted white */
+    --black-color: 255 255 255;
+    /* Inverted black */
   }
 
   body {
     background-color: theme('colors.background');
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
 
   /* Theme-specific visibility utility */
-  .logo-white { display: block; }
-  .logo-main { display: none; }
-  
-  html.light .logo-white { display: none !important; }
-  html.light .logo-main { display: block !important; }
+  .logo-white {
+    display: block;
+  }
+
+  .logo-main {
+    display: none;
+  }
+
+  html.light .logo-white {
+    display: none !important;
+  }
+
+  html.light .logo-main {
+    display: block !important;
+  }
 }
 
 .masonry-grid {
@@ -45,15 +62,21 @@
 }
 
 @media (min-width: 640px) {
-  .masonry-grid { column-count: 2; }
+  .masonry-grid {
+    column-count: 2;
+  }
 }
 
 @media (min-width: 1024px) {
-  .masonry-grid { column-count: 3; }
+  .masonry-grid {
+    column-count: 3;
+  }
 }
 
 @media (min-width: 1280px) {
-  .masonry-grid { column-count: 4; }
+  .masonry-grid {
+    column-count: 4;
+  }
 }
 
 .masonry-item {
