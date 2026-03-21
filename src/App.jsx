@@ -5,6 +5,7 @@ import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
+import WorkVideo from './pages/WorkVideo';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="clients" element={<Clients />} />
+          <Route path="work-video" element={<WorkVideo />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

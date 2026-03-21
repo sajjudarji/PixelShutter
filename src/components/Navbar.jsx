@@ -57,12 +57,12 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
+    { name: 'Work ', path: '/work-video' },
     { name: 'Contact', path: '/contact' },
-    // { name: 'Clients', path: '/clients' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-background/95 backdrop-blur-md py-4 md:py-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-6 md:py-8'}`}>
+    <nav className={`sticky top-0 w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-background/95 backdrop-blur-md py-4 md:py-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-6 md:py-8'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <Link to="/" className="z-50 flex items-center">
           <img

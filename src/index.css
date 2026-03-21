@@ -32,10 +32,12 @@
 
   body {
     background-color: theme('colors.background');
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   /* Theme-specific visibility utility */
@@ -83,3 +85,18 @@
   break-inside: avoid;
   margin-bottom: 1.5rem;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: marquee 35s linear infinite;
+  display: flex;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

@@ -27,11 +27,12 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-medium uppercase tracking-widest mb-4 md:mb-6 text-xs md:text-sm">Links</h4>
-            <div className="flex flex-col space-y-3 md:space-y-4">
-              <Link to="/" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Home</Link>
-              <Link to="/about" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">About Me</Link>
-              <Link to="/gallery" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Portfolio</Link>
-              <Link to="/clients" className="text-textSecondary hover:text-gold transition-colors text-sm tracking-wide">Clients</Link>
+            <div className="flex flex-wrap items-center text-sm tracking-wide gap-y-3 divide-x divide-white/20">
+              <Link to="/" className="text-textSecondary hover:text-gold transition-colors pr-4">Home</Link>
+              <Link to="/about" className="text-textSecondary hover:text-gold transition-colors px-4">About</Link>
+              <Link to="/gallery" className="text-textSecondary hover:text-gold transition-colors px-4">Portfolio</Link>
+              <Link to="/work-video" className="text-textSecondary hover:text-gold transition-colors px-4">Work</Link>
+              <Link to="/contact" className="text-textSecondary hover:text-gold transition-colors pl-4 border-l-0 md:border-l">Contact</Link>
             </div>
           </div>
           <div className="flex flex-col items-start">
