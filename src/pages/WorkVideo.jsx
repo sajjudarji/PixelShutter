@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { Play } from 'lucide-react';
+import { Work3D } from '../components/Page3DAnimations';
 
 const videoProjects = [
   {
@@ -43,8 +44,9 @@ const videoProjects = [
 
 export default function WorkVideo() {
   return (
-    <div className="w-full bg-background relative selection:bg-gold selection:text-black min-h-screen">
-      
+    <div className="w-full bg-background relative selection:bg-gold selection:text-black min-h-screen overflow-x-hidden">
+      <Work3D />
+
       {/* 1. HERO SECTION */}
       <section className="relative h-[35vh] md:h-[45vh] min-h-[350px] flex items-center justify-center border-b border-white/10">
         {/* Background Image Wrapper */}

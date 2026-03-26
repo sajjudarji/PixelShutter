@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Camera, Film, Users, Award } from 'lucide-react';
 import photographerProfile from '../assets/about_profile.jpg'; 
+import { About3D } from '../components/Page3DAnimations';
 
 const stats = [
   { label: "Years of Legacy", value: "45+" },
@@ -96,8 +97,9 @@ export default function About() {
       </section>
 
       {/* 2. WHO WE ARE (The Artist) */}
-      <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+      <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <About3D />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
           {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -122,7 +124,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative z-10"
+            className="relative z-10 bg-background/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-white/5"
           >
             <h2 className="text-3xl md:text-5xl font-light text-white uppercase tracking-[0.1em] leading-tight mb-6">
               The Artist <br className="hidden md:block"/>

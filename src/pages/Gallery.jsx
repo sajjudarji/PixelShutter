@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2, Camera } from 'lucide-react';
 import GalleryGrid from '../components/GalleryGrid';
 import Button from '../components/Button';
+import { Gallery3D } from '../components/Page3DAnimations';
 
 // Diverse High Quality Unsplash Images for Portfolio
 const galleryImages = [
@@ -55,7 +56,8 @@ export default function Gallery() {
     : galleryImages.filter(img => img.category === filter);
 
   return (
-    <div className="w-full bg-background relative selection:bg-gold selection:text-black min-h-screen">
+    <div className="w-full bg-background relative selection:bg-gold selection:text-black min-h-screen overflow-x-hidden">
+      <Gallery3D />
 
       {/* 1. HERO SECTION */}
       <section className="relative h-[45vh] md:h-[60vh] min-h-[400px] flex items-center justify-center border-b border-white/10">

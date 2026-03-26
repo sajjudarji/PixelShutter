@@ -10,9 +10,9 @@ import PopupForm from '../components/PopupForm';
 import InfiniteMarquee from '../components/InfiniteMarquee';
 
 const heroVideos = [
-  "https://assets.mixkit.co/videos/preview/mixkit-photographer-in-a-studio-taking-photos-of-a-model-34441-large.mp4",
-  "https://assets.mixkit.co/videos/preview/mixkit-dj-playing-live-at-a-festival-33827-large.mp4",
-  "https://assets.mixkit.co/videos/preview/mixkit-business-people-having-a-meeting-in-a-modern-office-1981-large.mp4"
+  "https://player.vimeo.com/video/494252666?background=1&autoplay=1&loop=1&muted=1",
+  "https://player.vimeo.com/video/336812686?background=1&autoplay=1&loop=1&muted=1",
+  "https://player.vimeo.com/video/285497298?background=1&autoplay=1&loop=1&muted=1"
 ];
 
 const workItems = [
@@ -62,19 +62,21 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-black">
           <AnimatePresence mode="wait">
             {/* Desktop Video Background */}
-            <motion.video
+            <motion.div
               key={`desktop-video-${currentVideoIndex}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              autoPlay
-              loop
-              muted
-              playsInline
-              src={heroVideos[currentVideoIndex]}
-              className="hidden md:block w-full h-full object-cover"
-            />
+              className="hidden md:block absolute inset-0 w-full h-full pointer-events-none overflow-hidden origin-center"
+            >
+              <iframe
+                src={heroVideos[currentVideoIndex]}
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="w-full h-full scale-[1.5]"
+                style={{ border: 'none' }}
+              />
+            </motion.div>
 
             {/* Mobile Fallback Image / Lighter Video optimization */}
             <motion.img
