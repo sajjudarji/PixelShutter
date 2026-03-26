@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoMain from '../assets/Logo Main.png';
-import logoWhite from '../assets/Logo white.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,12 +64,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <Link to="/" className="z-50 flex items-center">
           <img
-            src={logoWhite}
+            src="/images/Logo white.png"
             alt="LensCraft Logo"
             className="logo-white h-12 md:h-14 w-auto object-contain transition-all duration-300"
           />
           <img
-            src={logoMain}
+            src="/images/Logo Main.png"
             alt="LensCraft Logo"
             className="logo-main h-12 md:h-14 w-auto object-contain transition-all duration-300"
           />

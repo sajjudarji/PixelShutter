@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Camera, Film, Users, Award } from 'lucide-react';
-import photographerProfile from '../assets/about_profile.jpg'; 
 import { About3D } from '../components/Page3DAnimations';
 
 const stats = [
@@ -110,7 +109,7 @@ export default function About() {
           >
             <div className="absolute inset-0 -translate-x-4 -translate-y-4 md:-translate-x-6 md:-translate-y-6 border border-gold/30 z-0 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 rounded-sm"></div>
             <img
-              src={photographerProfile}
+              src="/images/about_profile.jpg"
               alt="Photographer Profile"
               className="relative z-10 w-full h-[450px] md:h-[650px] object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl rounded-sm"
               loading="lazy"

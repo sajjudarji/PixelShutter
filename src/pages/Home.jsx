@@ -9,10 +9,12 @@ import Button from '../components/Button';
 import PopupForm from '../components/PopupForm';
 import InfiniteMarquee from '../components/InfiniteMarquee';
 
+// The local videos are now served statically from the 'public/Videos' directory
 const heroVideos = [
-  "https://player.vimeo.com/video/494252666?background=1&autoplay=1&loop=1&muted=1",
-  "https://player.vimeo.com/video/336812686?background=1&autoplay=1&loop=1&muted=1",
-  "https://player.vimeo.com/video/285497298?background=1&autoplay=1&loop=1&muted=1"
+  "/Videos/1.mp4",
+  "/Videos/2.mp4",
+  "/Videos/3.mp4",
+  "/Videos/4.mp4"
 ];
 
 const workItems = [
@@ -57,37 +59,23 @@ export default function Home() {
       <PopupForm />
 
       {/* 1. HERO SECTION (Video Background) */}
-      <section ref={heroRef} className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-white/10">
+      <section ref={heroRef} className="relative h-[100dvh] md:h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-white/10">
         {/* Background Layer */}
         <div className="absolute inset-0 z-0 bg-black">
           <AnimatePresence mode="wait">
-            {/* Desktop Video Background */}
-            <motion.div
-              key={`desktop-video-${currentVideoIndex}`}
+            {/* Universal Video Background */}
+            <motion.video
+              key={`video-${currentVideoIndex}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              className="hidden md:block absolute inset-0 w-full h-full pointer-events-none overflow-hidden origin-center"
-            >
-              <iframe
-                src={heroVideos[currentVideoIndex]}
-                allow="autoplay; fullscreen; picture-in-picture"
-                className="w-full h-full scale-[1.5]"
-                style={{ border: 'none' }}
-              />
-            </motion.div>
-
-            {/* Mobile Fallback Image / Lighter Video optimization */}
-            <motion.img
-              key={`mobile-img-${currentVideoIndex}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              src={workItems[1].src} // Excellent fallback photo
-              className="md:hidden w-full h-full object-cover"
-              alt="Hero Background"
+              className="absolute inset-0 w-full h-full object-cover origin-center"
+              src={heroVideos[currentVideoIndex]}
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </AnimatePresence>
 

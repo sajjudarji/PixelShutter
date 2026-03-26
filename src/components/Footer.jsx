@@ -1,22 +1,20 @@
 import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoWhite from '../assets/Logo white.png';
-import logoMain from '../assets/Logo Main.png';
 
 export default function Footer() {
   return (
     <footer className="bg-surface py-12 md:py-16 mt-auto">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col items-start md:items-stretch">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 w-full text-left">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 w-full text-left">
           <div className="col-span-1 md:col-span-2 flex flex-col items-start">
             <Link to="/" className="block mb-4 md:mb-6">
               <img
-                src={logoWhite}
+                src="/images/Logo white.png"
                 alt="LensCraft Logo"
                 className="logo-white h-20 md:h-24 w-auto object-contain"
               />
               <img
-                src={logoMain}
+                src="/images/Logo Main.png"
                 alt="LensCraft Logo"
                 className="logo-main h-20 md:h-24 w-auto object-contain"
               />
@@ -25,7 +23,7 @@ export default function Footer() {
               Capturing timeless moments with an artistic eye. Premium photography services for weddings, portraits, and special events.
             </p>
           </div>
-          <div>
+          <div className="md:col-span-2">
             <h4 className="text-white font-medium uppercase tracking-widest mb-4 md:mb-6 text-xs md:text-sm">Links</h4>
             <div className="flex flex-wrap items-center text-sm tracking-wide gap-y-3 gap-x-4">
               <Link to="/" className="text-textSecondary hover:text-gold transition-colors">Home</Link>

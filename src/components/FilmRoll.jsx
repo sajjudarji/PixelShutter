@@ -3,11 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import './FilmRoll.css';
-import film1 from '../assets/roll_1.jpg';
-import film2 from '../assets/roll_2.jpg';
-import film3 from '../assets/roll_3.jpg';
-import film4 from '../assets/roll_4.jpg';
-import film5 from '../assets/roll_5.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,11 +11,11 @@ export default function FilmRoll() {
   
   // Example frames based on the UI
   const framesData = [
-    { id: 1, src: film1, alt: "Vintage" },
-    { id: 2, src: film2, alt: "Classic" },
-    { id: 3, src: film3, alt: "DSLR" },
-    { id: 4, src: film4, alt: "Modern Mirrorless" },
-    { id: 5, src: film5, alt: "Future" }
+    { id: 1, src: "/images/roll_1.jpg", alt: "Vintage" },
+    { id: 2, src: "/images/roll_2.jpg", alt: "Classic" },
+    { id: 3, src: "/images/roll_3.jpg", alt: "DSLR" },
+    { id: 4, src: "/images/roll_4.jpg", alt: "Modern Mirrorless" },
+    { id: 5, src: "/images/roll_5.jpg", alt: "Future" }
   ];
 
   useGSAP(() => {
