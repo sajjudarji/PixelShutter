@@ -60,23 +60,23 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`sticky top-0 w-full z-50 transition-all duration-500 ${scrolled || isOpen ? 'bg-background/95 backdrop-blur-md py-4 md:py-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-6 md:py-8'}`}>
+    <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled || isOpen ? 'bg-background/95 backdrop-blur-md py-1.5 md:py-2 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-2.5 md:py-3.5'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <Link to="/" className="z-50 flex items-center">
           <img
             src="/images/Logo white.png"
             alt="LensCraft Logo"
-            className="logo-white h-12 md:h-14 w-auto object-contain transition-all duration-300"
+            className="logo-white h-9 md:h-11 w-auto object-contain transition-all duration-300"
           />
           <img
             src="/images/Logo Main.png"
             alt="LensCraft Logo"
-            className="logo-main h-12 md:h-14 w-auto object-contain transition-all duration-300"
+            className="logo-main h-9 md:h-11 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10 items-center">
+        <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -86,8 +86,8 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button onClick={toggleTheme} className="text-textSecondary hover:text-gold transition-colors focus:outline-none" aria-label="Toggle Theme">
-            {isLight ? <Moon size={20} /> : <Sun size={20} />}
+          <button onClick={toggleTheme} className="text-textSecondary hover:text-gold transition-colors focus:outline-none p-1" aria-label="Toggle Theme">
+            {isLight ? <Moon size={18} /> : <Sun size={18} />}
           </button>
         </div>
 

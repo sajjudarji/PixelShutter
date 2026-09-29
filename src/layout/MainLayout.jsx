@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ThreeBackground from '../components/ThreeBackground';
-import FilmRoll from '../components/FilmRoll';
 import FloatingContact from '../components/FloatingContact';
 import CursorTracker from '../components/CursorTracker';
 
@@ -16,7 +15,6 @@ export default function MainLayout() {
         <Outlet />
       </main>
       <Footer />
-      <FilmRoll />
       <FloatingContact />
     </div>
   );

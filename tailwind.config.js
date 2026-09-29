@@ -16,7 +16,8 @@ export default {
         black: "rgb(var(--black-color) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       }
     },
   },

@@ -18,12 +18,11 @@ const heroVideos = [
 ];
 
 const workItems = [
-  { type: 'video', title: 'Corporate Brand Film', src: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80', video: 'https://assets.mixkit.co/videos/preview/mixkit-business-people-having-a-meeting-in-a-modern-office-1981-large.mp4' },
+  { type: 'photo', title: 'Corporate Photography', src: '/images/corporate_brand.jpg' },
   { type: 'photo', title: 'Product Photography', src: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80' },
-  { type: 'photo', title: 'Event Coverage', src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80' },
-  { type: 'video', title: 'Documentary', src: 'https://images.unsplash.com/photo-1623941453265-534960d3fcdd?auto=format&fit=crop&q=80', video: 'https://assets.mixkit.co/videos/preview/mixkit-dj-playing-live-at-a-festival-33827-large.mp4' },
-  { type: 'photo', title: 'Portrait Session', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80' },
-  { type: 'video', title: 'Commercial Ad', src: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?auto=format&fit=crop&q=80', video: 'https://assets.mixkit.co/videos/preview/mixkit-photographer-in-a-studio-taking-photos-of-a-model-34441-large.mp4' },
+  { type: 'photo', title: 'Event Coverage', src: '/images/Event_Coverage.JPG' },
+  { type: 'photo', title: 'Documentary', src: 'https://images.unsplash.com/photo-1623941453265-534960d3fcdd?auto=format&fit=crop&q=80', video: 'https://assets.mixkit.co/videos/preview/mixkit-dj-playing-live-at-a-festival-33827-large.mp4' },
+  { type: 'photo', title: 'Modeling', src: '/images/modeling.JPG', objectPosition: 'center top' },
 ];
 
 const whyChooseUs = [
@@ -111,7 +110,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h1 className="text-4xl mt-10 md:text-6xl lg:text-7xl font-sans font-bold text-white uppercase tracking-wider leading-tight mb-4 drop-shadow-2xl">
+            <h1 className="text-2xl mt-10 md:text-6xl lg:text-7xl font-sans font-bold text-white uppercase tracking-wider leading-tight mb-4 drop-shadow-2xl">
               Cinematic Photography &<br className="hidden md:block" /> Video Production
             </h1>
           </motion.div>
@@ -184,6 +183,7 @@ export default function Home() {
                   src={item.src}
                   alt={item.title}
                   loading="lazy"
+                  style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                 />
               )}
